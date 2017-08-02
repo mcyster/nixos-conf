@@ -52,3 +52,8 @@ This script bootstraps this machine: [nixos-bootstrap script](nixos-bootstrap), 
 
 Currently only able to get 1 of the nvidia video cards working
 
+# Host: owl
+
+Hardware
+- 1T SSD
+
