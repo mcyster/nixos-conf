@@ -20,7 +20,7 @@
 
   services.nfs.server.enable = true;
   services.nfs.server.exports = ''
-/home/mcyster/extole 10.11.14.16(insecure,rw,sync,no_subtree_check,all_squash,anonuid=2042,anongid=2042)
+/home/mcyster/extole 10.11.14.16(rw) #,no_subtree_check,all_squash,anonuid=2042,anongid=2042,async)
   '';
 
   users.extraGroups.mcyster = {
@@ -32,10 +32,10 @@
      isNormalUser = true;
      uid = 2042;
      group = "mcyster";
-     extraGroups = [ "wheel" ];
+     extraGroups = [ "wheel" "audio" "video" "systemd-journal" "systemd-network" ];
   };
 
   security.sudo.wheelNeedsPassword = false;
 
-  programs.virtualbox.enable=true;
+  virtualisation.virtualbox.host.enable = true;
 }

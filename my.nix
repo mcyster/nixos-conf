@@ -21,7 +21,15 @@
     unzip
     chromium
     eclipses.eclipse-sdk
+    gimp
   ];
+
+  environment.interactiveShellInit = ''
+    export PATH="$PATH:$HOME/bin"
+
+    shopt -s histappend
+    shopt -s checkwinsize
+  '';
 
   users.extraUsers.wal = {
      isNormalUser = true;
@@ -30,4 +38,6 @@
 
   environment.variables.EDITOR = pkgs.lib.mkOverride 0 "vim";
   environment.variables.BROWSER = pkgs.lib.mkOverride 0 "chromium";
+  #programs.bash.enableCompletion = true;
+
 }
