@@ -56,7 +56,7 @@ Booted from a minimal Nixos image (17.03) on a USB stick
 
 Had problems with booting the installed image after using gdisk, so I switched to fdisk.
 
-This script bootstraps this machine: [nixos-bootstrap script](nixos-bootstrap), includes partition sizes
+This script bootstraps this machine: [nixos-bootstrap script](emu-nixos-bootstrap), includes partition sizes
 
 Currently only able to get 1 of the nvidia video cards working
 
