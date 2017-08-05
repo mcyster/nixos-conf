@@ -1,21 +1,23 @@
-# Nixos config for `emu`
+# Nixos config for various machines
 
-This is the `/etc/nixos` directory on my workstation `emu`.
+This is the `/etc/nixos` directory 
 
 Split configuration into 
-- configuration.nix, mainly machine specific configuration
-- hardware-configuraton.nix, generated during setup, machine specific
+- $(hostname)/configuration.nix, machine specific configuration
+- $(hostname)/hardware-configuraton.nix, generated during setup, machine specific
 - my.nix, a minimal set of tools to get a comfortable environment, use on all my machines
 - extole.nix, configuration for work environment, use on machines I use for work
 - tunnel-cyster-com, setup a tunnel to a public host I have, use on a few machines
+- nixos-conf-pull, git pulls the latest configuration files, moves host specific files into deployed location
+- nixos-conf-psuh, updates host specific configurations form deployed location, git pushes local configuration files
 
-## This repo
+# Using This Repo
 
 Making changes:
 
 * `cd /etc/nixos`
 * `./nixos-conf-pull`
-* # change configuration files 
+* change configuration files
 * `nixos-rebuild switch`
 * check changes, reboot if needed
 * `./nixos-conf-push "message"`
@@ -35,9 +37,15 @@ Change channel:
 * `nix-channel --add https://nixos.org/channels/nixos-unstable nixos`
 * `nixos-rebuild switch --upgrade`
 
-## Setup
+# Setup
 
-# Host: emu
+## Host: owl
+
+Hardware
+- 64G 
+- 1T SSD
+
+## Host: emu
 
 Hardware
 - ASUS motherboard A6P6
@@ -52,12 +60,7 @@ This script bootstraps this machine: [nixos-bootstrap script](nixos-bootstrap), 
 
 Currently only able to get 1 of the nvidia video cards working
 
-# Host: owl
-
-Hardware
-- 1T SSD
-
-# Host: roo
+## Host: roo
 
 Hardware
 - Aging Macbook Pro
@@ -105,7 +108,7 @@ vi configuration.nix  # edit as needed
 nixos-install
 ```
 
-## Other user configs
+# Other configs
 
 <https://github.com/mbbx6spp/mbp-nixos> - on a macbook pro, also has notes on temperature control and brightness
 
