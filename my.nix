@@ -21,6 +21,7 @@
     unzip
     chromium
     eclipses.eclipse-sdk
+    gimp
   ];
 
   users.extraUsers.wal = {
