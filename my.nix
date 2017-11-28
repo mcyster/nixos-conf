@@ -20,6 +20,7 @@
     zip
     unzip
     chromium
+    gnupg
     eclipses.eclipse-sdk
     gimp
   ];

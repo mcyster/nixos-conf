@@ -35,6 +35,7 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.layout = "us";
+  services.xserver.displayManager.gdm.enable = true;
   # services.xserver.xkbOptions = "eurosign:e";
 
   services.xserver.desktopManager.gnome3.enable = true;
@@ -50,8 +51,6 @@
      extraGroups = [ "wheel" ];
   };
 
-  # The NixOS release to be compatible with for stateful data such as databases.
-  system.stateVersion = "17.03";
-
   nixpkgs.config.allowUnfree = true;
 }
+
