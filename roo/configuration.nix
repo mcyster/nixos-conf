@@ -31,6 +31,7 @@
   services.xserver.layout = "us";
 
   services.xserver.desktopManager.gnome3.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
 
   system.stateVersion = "17.03";
 
