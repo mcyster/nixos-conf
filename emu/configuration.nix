@@ -36,6 +36,8 @@
   #services.xserver.videoDrivers = [ "nvidia" ];
   #services.xserver.videoDrivers = [ "nvidiaBeta" ];
   services.xserver.videoDrivers = [ "nvidiaLegacy340" ];
+  services.xserver.displayManager.gdm.enable = true;
+
 
   system.stateVersion = "17.03";
 

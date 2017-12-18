@@ -1,0 +1,34 @@
+#
+
+echo "Nixos bootstrap"
+uname -a
+
+disk=/dev/sda
+
+memory="$(cat /proc/meminfo | grep "MemTotal" | egrep -o "[0-9]+")"
+echo "Memory: $memory"
+
+fdisk -l $disk
+read -p "Repartition $disk? (ctrl-c to stop)"
+
+wipefs -a /dev/sda
+echo -e "n\np\n1\n\n+100M\nt\nb\nn\np\n2\n\n+32G\nt\n2\n82\nn\np\n3\n\n\nt\n3\n83\nw\n" | fdisk $disk
+
+mkswap -L swap /dev/sda3
+mkfs.ext4 -L nixos /dev/sda2
+mkfs.vfat /dev/sda1
+
+ls -l /dev/disk/by-label
+
+mount /dev/disk/by-label/nixos /mnt
+mkdir -p /mnt/boot
+mount /dev/sda1 /mnt/boot
+swapon /dev/disk/by-label/swap
+
+nixos-generate-config --root /mnt
+
+sed -i  "/boot.loader.grub.device/c\ \ boot.loader.grub.device = \"$device\"" "/mnt/etc/nixos/configuration.nix"
+
+echo "nano /mnt/etc/nixos/configuration.nix"
+echo "nixos-install"
+
