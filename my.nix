@@ -14,6 +14,7 @@
     lshw
     lsof
     vim
+    dnsutils
     #vim_configurable
     git
     jq
