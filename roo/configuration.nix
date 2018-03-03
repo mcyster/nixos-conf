@@ -6,6 +6,7 @@
       ./hardware-configuration.nix
       ./my.nix
       ./extole.nix
+      ./print3d.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
