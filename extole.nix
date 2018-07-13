@@ -14,6 +14,7 @@
 
   services.dnsmasq.enable = true;
   services.dnsmasq.extraConfig = ''
+    server=/.ec2.internal/10.1.0.2
     server=/.intole.net/10.1.0.2
     conf-dir=/etc/dnsmasq.d
   '';

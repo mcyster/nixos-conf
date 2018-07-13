@@ -22,6 +22,7 @@
     unzip
     chromium
     gnupg
+    keybase
     eclipses.eclipse-sdk
     gimp
     keybase
