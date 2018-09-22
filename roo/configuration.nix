@@ -6,7 +6,7 @@
       ./hardware-configuration.nix
       ./my.nix
       ./extole.nix
-      ./print3d.nix
+#      ./print3d.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -35,6 +35,7 @@
   services.xserver.displayManager.gdm.enable = true;
 
   system.stateVersion = "17.03";
+  hardware.pulseaudio.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 }
