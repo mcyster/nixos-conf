@@ -6,6 +6,7 @@
       ./hardware-configuration.nix
       ./my.nix
       ./extole.nix
+      ./print3d.nix
       ./tunnel-cyster-com.nix
     ];
 
@@ -37,7 +38,6 @@
   #services.xserver.videoDrivers = [ "nvidiaBeta" ];
   services.xserver.videoDrivers = [ "nvidiaLegacy340" ];
   services.xserver.displayManager.gdm.enable = true;
-
 
   system.stateVersion = "17.03";
 
