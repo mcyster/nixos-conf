@@ -21,6 +21,7 @@
     zip
     unzip
     chromium
+    google-chrome
     gnupg
     keybase
     eclipses.eclipse-sdk
