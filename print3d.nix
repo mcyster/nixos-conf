@@ -2,8 +2,13 @@
 
 {
   environment.systemPackages = with pkgs; [
-    cura
-    slic3r
+    perl
+    perlPackages.ExtUtilsCppGuess
+    #cura
+    cura_stable
+    #curaLulzbot
+    #slic3r
+    slic3r-prusa3d
     printrun
   ];
 }
