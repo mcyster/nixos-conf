@@ -6,12 +6,6 @@
       ./vpn/network-extole.nix
     ];
 
-  networking.extraHosts = ''
-    52.3.248.63 vpn.intole.net
-    52.91.195.221 vpn.intole.net
-    54.86.141.200 vpn.intole.net
-  '';
-
   services.dnsmasq.enable = true;
   services.dnsmasq.extraConfig = ''
     server=/.ec2.internal/10.1.0.2

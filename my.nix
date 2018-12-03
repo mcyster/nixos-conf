@@ -14,6 +14,7 @@
     lshw
     lsof
     vim
+    atom
     dnsutils
     #vim_configurable
     git
