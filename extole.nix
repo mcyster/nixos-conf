@@ -6,16 +6,11 @@
       ./vpn/network-extole.nix
     ];
 
-  networking.extraHosts = ''
-    52.3.248.63 vpn.intole.net
-    52.91.195.221 vpn.intole.net
-    54.86.141.200 vpn.intole.net
-  '';
-
   services.dnsmasq.enable = true;
   services.dnsmasq.extraConfig = ''
     server=/.ec2.internal/10.1.0.2
     server=/.intole.net/10.1.0.2
+    server=/vpn.intole.net/8.8.8.8
     conf-dir=/etc/dnsmasq.d
   '';
 
@@ -39,4 +34,9 @@
   security.sudo.wheelNeedsPassword = false;
 
   virtualisation.virtualbox.host.enable = true;
+
+  networking.firewall.enable = true;
+  # these are ports necessary for nfs communication between lo and nixos
+  networking.firewall.allowedTCPPorts = [ 2049 20048 111 ];
+  networking.firewall.allowedUDPPorts = [ 20048 111 ];
 }

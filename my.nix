@@ -14,6 +14,7 @@
     lshw
     lsof
     vim
+    atom
     dnsutils
     #vim_configurable
     git
@@ -21,6 +22,7 @@
     zip
     unzip
     chromium
+    google-chrome
     gnupg
     keybase
     eclipses.eclipse-sdk

@@ -14,7 +14,7 @@
 
   networking.hostName = "roo";
   # networking.wireless.enable = true;
-  networking.networkmanager.enable = true;
+  # networking.networkmanager.enable = true;
 
   services.openssh.enable = true;
   services.netdata.enable = true;
