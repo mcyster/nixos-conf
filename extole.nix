@@ -28,7 +28,7 @@
      isNormalUser = true;
      uid = 2042;
      group = "mcyster";
-     extraGroups = [ "wheel" "audio" "video" "systemd-journal" "systemd-network" ];
+     extraGroups = [ "wheel" "audio" "video" "systemd-journal" "systemd-network" "dialout" ];
   };
 
   security.sudo.wheelNeedsPassword = false;
