@@ -39,8 +39,10 @@
 
   users.extraUsers.wal = {
      isNormalUser = true;
-     extraGroups = [ "wheel" ];
+     extraGroups = [ "wheel" "audio" "video" "systemd-journal" "systemd-network" "dialout" ];
   };
+
+  security.sudo.wheelNeedsPassword = false;
 
   environment.variables.EDITOR = pkgs.lib.mkOverride 0 "vim";
   environment.variables.BROWSER = pkgs.lib.mkOverride 0 "chromium";
