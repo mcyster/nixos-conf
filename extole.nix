@@ -7,10 +7,11 @@
     ];
 
   services.dnsmasq.enable = true;
+  services.dnsmasq.servers = [ "68.94.156.1" "68.94.157.1" ];
   services.dnsmasq.extraConfig = ''
+    server=/vpn.intole.net/8.8.8.8
     server=/.ec2.internal/10.1.0.2
     server=/.intole.net/10.1.0.2
-    server=/vpn.intole.net/8.8.8.8
     conf-dir=/etc/dnsmasq.d
   '';
 

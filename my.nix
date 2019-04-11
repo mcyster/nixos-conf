@@ -9,6 +9,7 @@
 
   environment.systemPackages = with pkgs; [
     tcpdump
+    mtr
     acpi
     dmidecode
     lshw
@@ -23,6 +24,7 @@
     unzip
     chromium
     google-chrome
+    firefox
     gnupg
     keybase
     eclipses.eclipse-sdk

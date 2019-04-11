@@ -11,6 +11,8 @@
       ./my.nix
       ./extole.nix
       ./tunnel-cyster-com.nix
+      #./print3d.nix
+      ./extole-printer.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -19,16 +21,11 @@
   networking.hostName = "owl";
   # networking.wireless.enable = true;
   networking.networkmanager.enable = true;
+  #networking.networkmanager.insertNameservers = [ "68.94.156.1" "68.94.157.1" ];
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
   services.netdata.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = false;
 
   # services.printing.enable = true;
 
@@ -43,6 +40,7 @@
   services.xserver.videoDrivers = [ "nvidia" ];
   #services.xserver.videoDrivers = [ "nvidiaBeta" ];
   #services.xserver.videoDrivers = [ "nvidiaLegacy340" ];
+  services.xserver.displayManager.gdm.wayland=false;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.extraUsers.bsmith = {
