@@ -13,7 +13,7 @@
     #python3
     #perl
     #perlPackages.ExtUtilsCppGuess
-    #cura
+    cura
     #cura_stable
     #curaLulzbot
     #slic3r
