@@ -1,5 +1,5 @@
 /configuration.nix
 /hardware-configuration.nix
-/network-extole.nix
-/user-credentials
+/vpn-extole.nix
+/vpn-user-credentials
 

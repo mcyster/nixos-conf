@@ -3,7 +3,7 @@
 {
   imports =
     [
-      ./network-extole.nix
+      ./vpn-extole.nix
     ];
 
   services.dnsmasq.enable = true;
