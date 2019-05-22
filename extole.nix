@@ -3,11 +3,14 @@
 {
   imports =
     [
-      ./vpn/network-extole.nix
+      ./network-extole.nix
     ];
 
   services.dnsmasq.enable = true;
+
+  # Extole US DNS Servers
   services.dnsmasq.servers = [ "68.94.156.1" "68.94.157.1" ];
+
   services.dnsmasq.extraConfig = ''
     server=/vpn.intole.net/8.8.8.8
     server=/.ec2.internal/10.1.0.2
@@ -17,7 +20,7 @@
 
   services.nfs.server.enable = true;
   services.nfs.server.exports = ''
-/home/mcyster/extole 10.11.14.16(rw) #,no_subtree_check,all_squash,anonuid=2042,anongid=2042,async)
+/home/mcyster/extole 10.11.14.16(rw)
   '';
 
   users.extraGroups.mcyster = {
