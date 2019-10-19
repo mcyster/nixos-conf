@@ -44,6 +44,11 @@
      extraGroups = [ "wheel" "audio" "video" "systemd-journal" "systemd-network" "dialout" ];
   };
 
+  users.extraUsers.leona = {
+     isNormalUser = true;
+     extraGroups = [ "wheel" "audio" "video" "systemd-journal" "systemd-network" "dialout" ];
+  };
+
   security.sudo.wheelNeedsPassword = false;
 
   environment.variables.EDITOR = pkgs.lib.mkOverride 0 "vim";
