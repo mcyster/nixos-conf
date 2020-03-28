@@ -20,7 +20,7 @@
     after = [ "network.target" ];
     serviceConfig = {
       User = "autossh";
-      ExecStart = "${pkgs.openssh}/bin/ssh -NTC -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=no -i %h/.ssh/servername-home-key -R 1126:localhost:22 autossh@cyster.com";
+      ExecStart = "${pkgs.openssh}/bin/ssh -NTC -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=no -i %h/.ssh/servername-home-key -R 1124:localhost:22 autossh@cyster.com";
       RestartSec = "15";
       Restart = "always";
     };

@@ -1,10 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  i18n = {
-     consoleKeyMap = "us";
-  };
-
   time.timeZone = "America/Los_Angeles";
 
   environment.systemPackages = with pkgs; [
@@ -24,12 +20,9 @@
     unzip
     chromium
     google-chrome
-    firefox
     gnupg
-    keybase
     eclipses.eclipse-sdk
     gimp
-    keybase
   ];
 
   environment.interactiveShellInit = ''
