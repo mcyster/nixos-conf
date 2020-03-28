@@ -16,12 +16,12 @@ Split configuration into
 Making changes:
 
 * `cd /etc/nixos`
-* git pull origin master
-* # change configuration files
+* `git pull origin master`
+* `# change configuration files`
 * `nixos-rebuild switch`
-* # check changes, reboot if needed
+* `# check changes, reboot if needed`
 * `./nixos-conf-push "message"`
-* git push origin master
+* `git push origin master`
 
 Updating:
 
