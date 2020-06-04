@@ -28,7 +28,7 @@
     gimp
     keybase
     steam
-    python37Full
+    python38Full
     pypi2nix
   ];
 
@@ -40,6 +40,16 @@
   '';
 
   users.extraUsers.wal = {
+     isNormalUser = true;
+     extraGroups = [ "wheel" "audio" "video" "systemd-journal" "systemd-network" "dialout" ];
+  };
+
+  users.extraUsers.kaden = {
+     isNormalUser = true;
+     extraGroups = [ "wheel" "audio" "video" "systemd-journal" "systemd-network" "dialout" ];
+  };
+
+  users.extraUsers.leona = {
      isNormalUser = true;
      extraGroups = [ "wheel" "audio" "video" "systemd-journal" "systemd-network" "dialout" ];
   };
