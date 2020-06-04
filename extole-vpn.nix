@@ -2,7 +2,6 @@
 
 {
 services.openvpn.servers."extole" = {
-  updateResolvConf = false;
   autoStart = true;
   config = ''
 setenv FORWARD_COMPATIBLE 1
@@ -23,7 +22,7 @@ ns-cert-type server
 reneg-sec 604800
 sndbuf 100000
 rcvbuf 100000
-auth-user-pass /etc/nixos/vpn-user-credentials
+auth-user-pass /etc/nixos/extole-vpn-credentials
 # NOTE: LZO commands are pushed by the Access Server at connect time.
 # NOTE: The below line doesn't disable LZO.
 comp-lzo no
@@ -32,7 +31,6 @@ setenv PUSH_PEER_INFO
 
 route-nopull
 route 10.0.0.0 255.0.0.0 vpn_gateway
-route 192.168.0.0 255.255.0.0 vpn_gateway
 
 <ca>
 -----BEGIN CERTIFICATE-----

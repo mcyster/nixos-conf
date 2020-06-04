@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  console.keyMap = "us";
   time.timeZone = "America/Los_Angeles";
 
   environment.systemPackages = with pkgs; [
@@ -20,10 +21,15 @@
     unzip
     chromium
     google-chrome
+    firefox
     gnupg
+    keybase
     eclipses.eclipse-sdk
     gimp
-    gnupg
+    keybase
+    steam
+    python37Full
+    pypi2nix
   ];
 
   environment.interactiveShellInit = ''
@@ -34,11 +40,6 @@
   '';
 
   users.extraUsers.wal = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" "audio" "video" "systemd-journal" "systemd-network" "dialout" ];
-  };
-
-  users.extraUsers.leona = {
      isNormalUser = true;
      extraGroups = [ "wheel" "audio" "video" "systemd-journal" "systemd-network" "dialout" ];
   };
