@@ -2,3 +2,4 @@
 /hardware-configuration.nix
 /extole-vpn.nix
 /extole-vpn-credentials
+vpn-user-credentials

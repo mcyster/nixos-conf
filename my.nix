@@ -23,6 +23,7 @@
     gnupg
     eclipses.eclipse-sdk
     gimp
+    gnupg
   ];
 
   environment.interactiveShellInit = ''

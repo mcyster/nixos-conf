@@ -6,6 +6,9 @@
       ./extole-vpn.nix
     ];
 
+  # Extole US DNS Servers
+  services.dnsmasq.servers = [ "68.94.156.1" "68.94.157.1" ];
+
   services.dnsmasq.enable = true;
   services.dnsmasq.extraConfig = ''
     server=/vpn.intole.net/8.8.8.8
@@ -28,6 +31,8 @@
     unzip
     google-chrome
     firefox
+    gnupg
+    pinentry
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -40,5 +45,16 @@
 
   users.extraGroups.mcyster = {
     gid = 2042;
+  };
+
+  users.extraUsers.kburgess = {
+     isNormalUser = true;
+     uid = 2075;
+     group = "mcyster";
+     extraGroups = [ "wheel" "audio" "video" "systemd-journal" "systemd-network" "dialout" ];
+  };
+
+  users.extraGroups.kburgess = {
+    gid = 2075;
   };
 }
