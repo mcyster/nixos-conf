@@ -27,9 +27,11 @@
     eclipses.eclipse-sdk
     gimp
     keybase
-    steam
     python38Full
     pypi2nix
+    jetbrains.pycharm-community
+    kazam
+    ffmpeg
   ];
 
   environment.interactiveShellInit = ''
